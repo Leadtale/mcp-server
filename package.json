@@ -1,0 +1,56 @@
+{
+  "name": "@leadtale/mcp-server",
+  "version": "0.1.0",
+  "description": "Official MCP server for LeadTale. Connect your AI tools to LeadTale contact + company intelligence via stdio (Claude Desktop, Cursor, Zed, Continue).",
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "leadtale",
+    "sales-intelligence",
+    "b2b",
+    "lead-generation",
+    "prospecting"
+  ],
+  "license": "MIT",
+  "author": "Leadtale <support@leadtale.com>",
+  "homepage": "https://github.com/Leadtale/mcp-server#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leadtale/mcp-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Leadtale/mcp-server/issues"
+  },
+  "type": "module",
+  "bin": {
+    "mcp-server-leadtale": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "undici": "^7.7.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
